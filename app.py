@@ -472,7 +472,7 @@ Provide an integrated explanation of vegetation condition, climate stress, produ
 row1_col1, row1_col2 = st.columns([2, 1])
 
 with row1_col1:
-    st.subheader("1️⃣ System Overview")
+    st.subheader("System Overview")
     st.markdown(
         """
 - Agri-food underpins Irish employment and exports.
