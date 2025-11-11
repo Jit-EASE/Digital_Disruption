@@ -579,7 +579,7 @@ Identify which segments are leading and lagging, and outline policy levers or AI
         st.write(gpt_chat(prompt))
 
 with row3_col2:
-    st.subheader("4️⃣ Winners & Losers")
+    st.subheader("Winners & Losers")
     wl_df = pd.DataFrame(
         {
             "Group": [
