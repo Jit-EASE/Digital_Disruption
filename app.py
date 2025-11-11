@@ -500,7 +500,7 @@ st.markdown("---")
 row2_col1, row2_col2 = st.columns([2, 1])
 
 with row2_col1:
-    st.subheader("2️⃣ Disruption Drivers")
+    st.subheader("Disruption Drivers")
     forces_df = pd.DataFrame(
         {
             "Force": [
@@ -524,7 +524,7 @@ with row2_col1:
     st.plotly_chart(fig_forces, use_container_width=True)
 
 with row2_col2:
-    st.subheader("NLP View – Disruption Drivers")
+  #  st.subheader("Details")
     if st.button("Explain Disruption Drivers", key="explain_forces"):
         prompt = (
             policy_context
