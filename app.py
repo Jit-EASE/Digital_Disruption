@@ -332,7 +332,7 @@ Designed and Developed by Shubhojit Bagchi ©️ 2025
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("9️⃣ GeoSpatial Copernicus Layer – Counties 2016–2024")
+st.subheader("GeoSpatial Map - Copernicus")
 
 cop = data.get("copernicus")
 if cop is None:
@@ -419,7 +419,7 @@ else:
 
     map_state = st_folium(m, height=550, width="100%")
 
-    st.markdown("**NLP explanation for clicked location**")
+    st.markdown("**County Details**")
 
     if map_state and map_state.get("last_clicked"):
         lat = map_state["last_clicked"]["lat"]
@@ -472,7 +472,7 @@ Provide an integrated explanation of vegetation condition, climate stress, produ
 row1_col1, row1_col2 = st.columns([2, 1])
 
 with row1_col1:
-    st.subheader("1️⃣ System Overview")
+    st.subheader("System Overview")
     st.markdown(
         """
 - Agri-food underpins Irish employment and exports.
@@ -500,7 +500,7 @@ st.markdown("---")
 row2_col1, row2_col2 = st.columns([2, 1])
 
 with row2_col1:
-    st.subheader("2️⃣ Disruption Drivers")
+    st.subheader("Disruption Drivers")
     forces_df = pd.DataFrame(
         {
             "Force": [
@@ -547,7 +547,7 @@ st.markdown("---")
 row3_col1, row3_col2 = st.columns(2)
 
 with row3_col1:
-    st.subheader("3️⃣ Value Chain Digital Maturity")
+    st.subheader("Value Chain Digital Maturity")
     chain_df = pd.DataFrame(
         {
             "Segment": ["On-Farm", "Processing", "Logistics", "Finance & Advisory"],
@@ -579,7 +579,7 @@ Identify which segments are leading and lagging, and outline policy levers or AI
         st.write(gpt_chat(prompt))
 
 with row3_col2:
-    st.subheader("4️⃣ Winners & Losers")
+    st.subheader("Winners & Losers")
     wl_df = pd.DataFrame(
         {
             "Group": [
@@ -624,7 +624,7 @@ st.markdown("---")
 row4_col1, row4_col2 = st.columns([1.2, 1.8])
 
 with row4_col1:
-    st.subheader("5️⃣ Systemic Risk Gauge")
+    st.subheader("Systemic Risk Gauge")
     risks_df = pd.DataFrame(
         {
             "Risk": [
@@ -671,7 +671,7 @@ with row4_col2:
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("7️⃣ Empirical Indicators")
+st.subheader("Empirical Indicators")
 row5_col1, row5_col2, row5_col3 = st.columns(3)
 
 # Prices
@@ -792,7 +792,7 @@ Summarise which technologies are most/least adopted, and describe how EU AI, dat
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("8️⃣ RL Policy Simulation & Explainable Policy Layer")
+st.subheader("Policy Simulation & Explanation")
 
 row6_col1, row6_col2 = st.columns([1.6, 1.4])
 
