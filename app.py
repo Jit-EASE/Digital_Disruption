@@ -419,7 +419,7 @@ else:
 
     map_state = st_folium(m, height=550, width="100%")
 
-    st.markdown("**NLP explanation for clicked location**")
+    st.markdown("**Agentic Policy Advisor for selected County**")
 
     if map_state and map_state.get("last_clicked"):
         lat = map_state["last_clicked"]["lat"]
