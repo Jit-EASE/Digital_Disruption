@@ -319,7 +319,7 @@ policy_context = build_policy_context(selected_keys)
 # ---------------------------------------------------
 
 
-st.title("🌾 Irish Agri-Food Digital Disruption & AI Policy Dashboard")
+st.title("Agri-Policy-Twin: A Self-Learning, Reasoning & Governing Digital Twin for Ireland’s Agri-Food Sector")
 
 st.markdown(
     """
@@ -332,7 +332,7 @@ st.markdown(
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("9️⃣ GeoSpatial Copernicus Layer – Counties 2016–2024")
+st.subheader("GeoSpatial Mapping")
 
 cop = data.get("copernicus")
 if cop is None:
