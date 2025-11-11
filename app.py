@@ -319,11 +319,15 @@ policy_context = build_policy_context(selected_keys)
 # ---------------------------------------------------
 
 
-st.title("Irish Agri-Food Digital Disruption & Policy Dashboard")
+st.title("🌾 Irish Agri-Food Digital Disruption & AI Policy Dashboard")
 
 st.markdown(
     """
-Designed and Developed by Shubhojit Bagchi ©️ 2025
+This interactive dashboard combines:
+- 📊 **Empirical indicators** (prices, emissions, digital adoption)
+- 🧩 **Reinforcement-learning policy simulation**
+- 🌿 **Explainable decision-tree policy layer**
+- 🤖 **NLP explanations with GPT-4o-mini**, grounded in EU frameworks you select in the sidebar
 """
 )
 
@@ -332,7 +336,7 @@ Designed and Developed by Shubhojit Bagchi ©️ 2025
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("GeoSpatial Map - Copernicus")
+st.subheader("9️⃣ GeoSpatial Copernicus Layer – Counties 2016–2024")
 
 cop = data.get("copernicus")
 if cop is None:
@@ -419,7 +423,7 @@ else:
 
     map_state = st_folium(m, height=550, width="100%")
 
-    st.markdown("**County Details**")
+    st.markdown("**NLP explanation for clicked location**")
 
     if map_state and map_state.get("last_clicked"):
         lat = map_state["last_clicked"]["lat"]
@@ -472,7 +476,7 @@ Provide an integrated explanation of vegetation condition, climate stress, produ
 row1_col1, row1_col2 = st.columns([2, 1])
 
 with row1_col1:
-    st.subheader("System Overview")
+    st.subheader("1️⃣ System Overview")
     st.markdown(
         """
 - Agri-food underpins Irish employment and exports.
@@ -482,13 +486,13 @@ with row1_col1:
     )
 
 with row1_col2:
-    st.subheader("Key Indicators")
+    st.subheader("Key RL Indicators")
     latest_adoption = rl_df["adoption"].iloc[-1]
     latest_ghg = rl_df["ghg"].iloc[-1]
     sustainable_share = (rl_df["policy"] == "🟢 Sustainable").mean() * 100
 
-    st.metric("Final Adoption", f"{latest_adoption:.2f}")
-    st.metric("Final GHG (Mt CO₂e)", f"{latest_ghg:.2f}")
+    st.metric("RL Final Adoption", f"{latest_adoption:.2f}")
+    st.metric("RL Final GHG (Mt CO₂e)", f"{latest_ghg:.2f}")
     st.metric("Sustainable Episodes", f"{sustainable_share:.1f}%")
 
 
@@ -500,7 +504,7 @@ st.markdown("---")
 row2_col1, row2_col2 = st.columns([2, 1])
 
 with row2_col1:
-    st.subheader("Disruption Drivers")
+    st.subheader("2️⃣ Disruption Drivers")
     forces_df = pd.DataFrame(
         {
             "Force": [
@@ -547,7 +551,7 @@ st.markdown("---")
 row3_col1, row3_col2 = st.columns(2)
 
 with row3_col1:
-    st.subheader("Value Chain Digital Maturity")
+    st.subheader("3️⃣ Value Chain Digital Maturity")
     chain_df = pd.DataFrame(
         {
             "Segment": ["On-Farm", "Processing", "Logistics", "Finance & Advisory"],
@@ -579,7 +583,7 @@ Identify which segments are leading and lagging, and outline policy levers or AI
         st.write(gpt_chat(prompt))
 
 with row3_col2:
-    st.subheader("Winners & Losers")
+    st.subheader("4️⃣ Winners & Losers")
     wl_df = pd.DataFrame(
         {
             "Group": [
@@ -624,7 +628,7 @@ st.markdown("---")
 row4_col1, row4_col2 = st.columns([1.2, 1.8])
 
 with row4_col1:
-    st.subheader("Systemic Risk Gauge")
+    st.subheader("5️⃣ Systemic Risk Gauge")
     risks_df = pd.DataFrame(
         {
             "Risk": [
@@ -655,9 +659,23 @@ with row4_col1:
     st.plotly_chart(fig_risk, use_container_width=True)
 
 with row4_col2:
-    st.subheader("Strategic Directions")
+    st.subheader("6️⃣ Systemic Risk Interpretation & Strategic Directions")
+
+    st.markdown(
+        """
+**Risk breakdown**
+
+- **Fragmented Strategy** (0.85): Weak coordination across agencies / data silos  
+- **Platform Lock-in** (0.80): Over-reliance on proprietary AgTech ecosystems  
+- **Skills Gap** (0.90): Severe shortage of digital & AI literacy in rural workforce  
+- **Two-Speed Rural Economy** (0.75): Uneven access to broadband, finance, innovation
+        """
+    )
+
     st.success(
         """
+**Strategic directions**
+
 1. Build a **coherent national digital-agri architecture** (interoperable platforms, open APIs).
 2. Invest in **skills, advisory, and explainable AI**, not just hardware.
 3. Guarantee **data ownership and portability** for farmers and SMEs, aligning with the Data Act & GDPR.
@@ -671,7 +689,7 @@ with row4_col2:
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("Empirical Indicators")
+st.subheader("7️⃣ Empirical Indicators")
 row5_col1, row5_col2, row5_col3 = st.columns(3)
 
 # Prices
@@ -792,22 +810,22 @@ Summarise which technologies are most/least adopted, and describe how EU AI, dat
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("Policy Simulation & Explanation")
+st.subheader("8️⃣ RL Policy Simulation & Explainable Policy Layer")
 
 row6_col1, row6_col2 = st.columns([1.6, 1.4])
 
 with row6_col1:
-    st.markdown("**Policy Classification**")
+    st.markdown("**RL Episodes – Policy Classification**")
     fig_rl = px.scatter(
         rl_df,
         x="ghg",
         y="adoption",
         color="policy",
         hover_data=["episode", "action", "reward"],
-        title="Sustainable vs Balanced vs Unsustainable",
+        title="RL Episodes – Sustainable vs Balanced vs Unsustainable",
     )
     st.plotly_chart(fig_rl, use_container_width=True)
-    if st.button("Explain Scatter"):
+    if st.button("Explain RL Scatter"):
         summary = rl_df.groupby("policy")["reward"].mean().reset_index()
         prompt = (
             policy_context
@@ -822,17 +840,17 @@ Explain how often the system achieves sustainable outcomes, where it struggles, 
         st.write(gpt_chat(prompt))
 
 with row6_col2:
-    st.markdown("**Policy Rules**")
+    st.markdown("**Decision Tree Policy Rules**")
     rules_text = export_text(clf, feature_names=list(X.columns))
     st.code(rules_text)
 
-    st.markdown("**Ask AI Teacher**")
+    st.markdown("**Ask RL Teacher (GPT-4o-mini)**")
     snapshot = {
         "episodes": int(len(rl_df)),
         "avg_reward": float(rl_df["reward"].mean()),
         "sustainable_share": float((rl_df["policy"] == "🟢 Sustainable").mean()),
     }
-    if st.button("Generate Strategy Advice"):
+    if st.button("Generate RL Strategy Advice"):
         prompt = (
             policy_context
             + f"""
@@ -845,7 +863,7 @@ Provide 3 concrete policy moves to improve sustainable outcomes while staying co
         )
         st.write(gpt_chat(prompt, max_tokens=800, temperature=0.4))
 
-    st.markdown("**Agentic AI Policy Advisor**")
+    st.markdown("**RAG-Style Policy Question (GPT-4o-mini)**")
     user_q = st.text_area(
         "Ask a question about agri-food digital policy (eco-schemes, smart farming, etc.)",
         key="rag_q",
