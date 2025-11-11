@@ -655,7 +655,7 @@ with row4_col1:
     st.plotly_chart(fig_risk, use_container_width=True)
 
 with row4_col2:
-    st.subheader("6️⃣ Strategic Directions")
+    st.subheader("Strategic Directions")
     st.success(
         """
 1. Build a **coherent national digital-agri architecture** (interoperable platforms, open APIs).
