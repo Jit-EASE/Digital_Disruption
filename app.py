@@ -319,15 +319,11 @@ policy_context = build_policy_context(selected_keys)
 # ---------------------------------------------------
 
 
-st.title("🌾 Irish Agri-Food Digital Disruption & AI Policy Dashboard")
+st.title("Irish Agri-Food Digital Disruption & Policy Dashboard")
 
 st.markdown(
     """
-This interactive dashboard combines:
-- 📊 **Empirical indicators** (prices, emissions, digital adoption)
-- 🧩 **Reinforcement-learning policy simulation**
-- 🌿 **Explainable decision-tree policy layer**
-- 🤖 **NLP explanations with GPT-4o-mini**, grounded in EU frameworks you select in the sidebar
+Designed and Developed by Shubhojit Bagchi ©️ 2025
 """
 )
 
