@@ -547,7 +547,7 @@ st.markdown("---")
 row3_col1, row3_col2 = st.columns(2)
 
 with row3_col1:
-    st.subheader("3️⃣ Value Chain Digital Maturity")
+    st.subheader("Value Chain Digital Maturity")
     chain_df = pd.DataFrame(
         {
             "Segment": ["On-Farm", "Processing", "Logistics", "Finance & Advisory"],
