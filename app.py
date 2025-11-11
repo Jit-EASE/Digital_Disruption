@@ -822,7 +822,7 @@ Explain how often the system achieves sustainable outcomes, where it struggles, 
         st.write(gpt_chat(prompt))
 
 with row6_col2:
-    st.markdown("**Decision Tree Policy Rules**")
+    st.markdown("**Policy Rules**")
     rules_text = export_text(clf, feature_names=list(X.columns))
     st.code(rules_text)
 
