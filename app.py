@@ -624,7 +624,7 @@ st.markdown("---")
 row4_col1, row4_col2 = st.columns([1.2, 1.8])
 
 with row4_col1:
-    st.subheader("5️⃣ Systemic Risk Gauge")
+    st.subheader("Systemic Risk Gauge")
     risks_df = pd.DataFrame(
         {
             "Risk": [
@@ -655,7 +655,7 @@ with row4_col1:
     st.plotly_chart(fig_risk, use_container_width=True)
 
 with row4_col2:
-    st.subheader("6️⃣ Systemic Risk Interpretation & Strategic Directions")
+    st.subheader("Systemic Risk Interpretation & Strategic Directions")
 
     st.markdown(
         """
@@ -685,7 +685,7 @@ with row4_col2:
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("7️⃣ Empirical Indicators")
+st.subheader("Empirical Indicators")
 row5_col1, row5_col2, row5_col3 = st.columns(3)
 
 # Prices
@@ -813,22 +813,22 @@ Summarise which technologies are most/least adopted, and describe how EU AI, dat
 # ---------------------------------------------------
 
 st.markdown("---")
-st.subheader("8️⃣ RL Policy Simulation & Explainable Policy Layer")
+st.subheader("Policy Simulation & Explanation")
 
 row6_col1, row6_col2 = st.columns([1.6, 1.4])
 
 with row6_col1:
-    st.markdown("**RL Episodes – Policy Classification**")
+    st.markdown("**Episodes – Policy Classification**")
     fig_rl = px.scatter(
         rl_df,
         x="ghg",
         y="adoption",
         color="policy",
         hover_data=["episode", "action", "reward"],
-        title="RL Episodes – Sustainable vs Balanced vs Unsustainable",
+        title="Episodes – Sustainable vs Balanced vs Unsustainable",
     )
     st.plotly_chart(fig_rl, use_container_width=True)
-    if st.button("Explain RL Scatter"):
+    if st.button("Explain Scatter"):
         summary = rl_df.groupby("policy")["reward"].mean().reset_index()
         prompt = (
             policy_context
@@ -843,17 +843,17 @@ Explain how often the system achieves sustainable outcomes, where it struggles, 
         st.write(gpt_chat(prompt))
 
 with row6_col2:
-    st.markdown("**Decision Tree Policy Rules**")
+    st.markdown("**Policy Rules**")
     rules_text = export_text(clf, feature_names=list(X.columns))
     st.code(rules_text)
 
-    st.markdown("**Ask RL Teacher (GPT-4o-mini)**")
+    st.markdown("**Ask AI Teacher**")
     snapshot = {
         "episodes": int(len(rl_df)),
         "avg_reward": float(rl_df["reward"].mean()),
         "sustainable_share": float((rl_df["policy"] == "🟢 Sustainable").mean()),
     }
-    if st.button("Generate RL Strategy Advice"):
+    if st.button("Generate Strategy Advice"):
         prompt = (
             policy_context
             + f"""
@@ -866,7 +866,7 @@ Provide 3 concrete policy moves to improve sustainable outcomes while staying co
         )
         st.write(gpt_chat(prompt, max_tokens=800, temperature=0.4))
 
-    st.markdown("**RAG-Style Policy Question (GPT-4o-mini)**")
+    st.markdown("**Trained Agentic Policy Advisor**")
     user_q = st.text_area(
         "Ask a question about agri-food digital policy (eco-schemes, smart farming, etc.)",
         key="rag_q",
