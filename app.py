@@ -302,7 +302,7 @@ st.sidebar.title("Regulatory Lenses")
 policy_labels = [meta["label"] for meta in POLICY_CORPUS.values()]
 default_labels = [POLICY_CORPUS["EU_AI_ACT"]["label"], POLICY_CORPUS["EU_GDPR"]["label"]]
 selected_labels = st.sidebar.multiselect(
-    "Apply EU frameworks to all AI/NLP reasoning:",
+    "EU Policy Frameworks",
     policy_labels,
     default=default_labels,
 )
@@ -690,7 +690,7 @@ row5_col1, row5_col2, row5_col3 = st.columns(3)
 
 # Prices
 with row5_col1:
-    st.markdown("**Price Indices**")
+  #  st.markdown("**Price Indices**")
     prices = data["prices"]
     if prices is not None:
         fig_prices = px.line(
@@ -719,7 +719,7 @@ Describe general trends and potential implications for farmer margins, investmen
 
 # GHG vs CAP
 with row5_col2:
-    st.markdown("**GHG vs CAP Climate Spend**")
+  #  st.markdown("**GHG vs CAP Climate Spend**")
     ghg = data["ghg"]
     cap = data["cap"]
     if ghg is not None and cap is not None and "year" in ghg.columns and "year" in cap.columns:
@@ -778,7 +778,7 @@ Discuss whether increased spend appears to correlate with stabilisation or reduc
 
 # Digital Adoption
 with row5_col3:
-    st.markdown("**Digital Adoption**")
+  #  st.markdown("**Digital Adoption**")
     digital = data["digital"]
     if digital is not None:
         fig_dig = px.bar(
