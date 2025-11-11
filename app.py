@@ -482,13 +482,13 @@ with row1_col1:
     )
 
 with row1_col2:
-    st.subheader("Key RL Indicators")
+    st.subheader("Key Indicators")
     latest_adoption = rl_df["adoption"].iloc[-1]
     latest_ghg = rl_df["ghg"].iloc[-1]
     sustainable_share = (rl_df["policy"] == "🟢 Sustainable").mean() * 100
 
-    st.metric("RL Final Adoption", f"{latest_adoption:.2f}")
-    st.metric("RL Final GHG (Mt CO₂e)", f"{latest_ghg:.2f}")
+    st.metric("Final Adoption", f"{latest_adoption:.2f}")
+    st.metric("Final GHG (Mt CO₂e)", f"{latest_ghg:.2f}")
     st.metric("Sustainable Episodes", f"{sustainable_share:.1f}%")
 
 
