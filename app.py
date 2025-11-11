@@ -768,6 +768,13 @@ Discuss whether increased spend appears to correlate with stabilisation or reduc
                 st.write(gpt_chat(prompt))
         else:
             st.info("GHG and CAP data loaded but no overlapping years after merge.")
+            try:
+                ghg_years = sorted(ghg["year"].dropna().unique().tolist())
+                cap_years = sorted(cap["year"].dropna().unique().tolist())
+                st.markdown("**Debug – year coverage**")
+                st.write({"ghg_years": ghg_years, "cap_years": cap_years})
+            except Exception as e:
+                st.warning(f"Could not display year coverage for GHG/CAP data: {e}")
     elif ghg is None or cap is None:
         st.info("Upload `agri_ghg_emissions.csv` and `cap_climate_spend.csv` in the data folder.")
     else:
