@@ -845,7 +845,7 @@ Provide 3 concrete policy moves to improve sustainable outcomes while staying co
         )
         st.write(gpt_chat(prompt, max_tokens=800, temperature=0.4))
 
-    st.markdown("**RAG-Style Policy Question (GPT-4o-mini)**")
+    st.markdown("**Agentic AI Policy Advisor**")
     user_q = st.text_area(
         "Ask a question about agri-food digital policy (eco-schemes, smart farming, etc.)",
         key="rag_q",
