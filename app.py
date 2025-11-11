@@ -818,7 +818,7 @@ st.subheader("Policy Simulation & Explanation")
 row6_col1, row6_col2 = st.columns([1.6, 1.4])
 
 with row6_col1:
-    st.markdown("**Episodes – Policy Classification**")
+    st.markdown("**Policy Classification**")
     fig_rl = px.scatter(
         rl_df,
         x="ghg",
@@ -828,7 +828,7 @@ with row6_col1:
         title="Episodes – Sustainable vs Balanced vs Unsustainable",
     )
     st.plotly_chart(fig_rl, use_container_width=True)
-    if st.button("Explain Scatter"):
+    if st.button("Explain"):
         summary = rl_df.groupby("policy")["reward"].mean().reset_index()
         prompt = (
             policy_context
