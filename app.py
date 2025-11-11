@@ -825,7 +825,7 @@ with row6_col1:
         y="adoption",
         color="policy",
         hover_data=["episode", "action", "reward"],
-        title="Episodes – Sustainable vs Balanced vs Unsustainable",
+        title="Sustainable vs Balanced vs Unsustainable",
     )
     st.plotly_chart(fig_rl, use_container_width=True)
     if st.button("Explain"):
