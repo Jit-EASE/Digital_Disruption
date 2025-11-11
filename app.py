@@ -389,13 +389,34 @@ else:
         coords = county_coords.get(row["county"])
         if not coords:
             continue
+
+        lat, lon = coords
+
+        # Add "whiskers" (small crosshair-style lines) around each county location
+        # to visually emphasise the point on the map.
+        whisk = 0.08  # degrees; small enough not to clutter Ireland map view
+        folium.PolyLine(
+            locations=[[lat - whisk, lon], [lat + whisk, lon]],
+            color="lightblue",
+            weight=2,
+            opacity=0.9,
+        ).add_to(m)
+        folium.PolyLine(
+            locations=[[lat, lon - whisk], [lat, lon + whisk]],
+            color="lightblue",
+            weight=2,
+            opacity=0.9,
+        ).add_to(m)
+
         tooltip = (
             f"{row['county']} ({year_sel})\n"
             f"NDVI: {row['ndvi_mean']:.3f} | Soil moisture: {row['s1_soil_moisture']:.3f}\n"
             f"GHG: {row['ghg_kgco2e_per_ha']} kgCO₂e/ha | CAP support: {row['cap_support_eur_per_ha']:.0f} €/ha"
         )
+
+        # Blue arrow marker at the centre of the whiskers for each county
         folium.Marker(
-            location=coords,
+            location=[lat, lon],
             tooltip=tooltip,
             icon=folium.Icon(color="blue", icon="arrow-up"),
         ).add_to(m)
