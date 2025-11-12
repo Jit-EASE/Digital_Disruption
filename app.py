@@ -915,10 +915,10 @@ st.sidebar.markdown("""
 **Met Éireann AgMet Stations, NOAA VIIRS, ERA5 Reanalysis**  
 """)
 
-st.sidebar.markdown("""
-**EU Regulatory Frameworks**  
-- EU AI Act, EU Data Act, GDPR, Data Gov. Act, Cybersecurity Act  
-""")
+#st.sidebar.markdown("""
+#**EU Regulatory Frameworks**  
+#- EU AI Act, EU Data Act, GDPR, Data Gov. Act, Cybersecurity Act  
+#""")
 
 #st.sidebar.markdown("---")
 #st.sidebar.caption("Data harmonised to county and NUTS3 levels (2016–2024).")
