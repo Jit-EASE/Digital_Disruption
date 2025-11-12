@@ -891,41 +891,28 @@ st.sidebar.markdown("---")
 st.sidebar.title("Official Data Sources")
 
 st.sidebar.markdown("""
-**CSO – Central Statistics Office**  
-- Agricultural Price Indices  
-- Agri-Environmental Indicators  
-- Farm Structure & Income Data  
+**CSO – Central Statistics Office**   
 """)
 
 st.sidebar.markdown("""
 **DAFM – Dept. of Agriculture, Food & the Marine**  
-- CAP Strategic Plan 2023–2027  
-- Eco-Schemes & LPIS Datasets  
 """)
 
 st.sidebar.markdown("""
-**Copernicus / ESA**  
-- Sentinel-1/2/3/5P Imagery  
-- NDVI, Soil Moisture, CH₄, NO₂  
+**Copernicus / ESA**   
 """)
 
 st.sidebar.markdown("""
 **Eurostat – European Commission**  
-- Economic Accounts for Agriculture  
-- GHG Emissions by Sector 
 """)
 
 
 st.sidebar.markdown("""
-**EEA – European Environment Agency**  
-- CORINE Land Cover / CLMS  
-- E-PRTR Emission Register  
+**EEA – European Environment Agency**   
 """)
 
 st.sidebar.markdown("""
-**Climate & Meteorological Data**  
-- Met Éireann AgMet Stations  
-- NOAA VIIRS, ERA5 Reanalysis  
+**Met Éireann AgMet Stations, NOAA VIIRS, ERA5 Reanalysis**  
 """)
 
 st.sidebar.markdown("""
