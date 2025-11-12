@@ -323,7 +323,7 @@ st.title("Agri-Policy-Twin: A Self-Learning, Reasoning & Governing Digital Twin 
 
 st.markdown(
     """
-   System Architecture, Design and Engineering: Shubhojit Bagchi ©️ 2025
+   ###System Architecture, Design and Engineering: Shubhojit Bagchi ©️ 2025###
    """
 )
 
