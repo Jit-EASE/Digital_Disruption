@@ -883,4 +883,57 @@ Respond with 4-6 concise bullet points, grounded in realistic policy logic and c
             """
         )
         st.write(gpt_chat(prompt, max_tokens=800, temperature=0.5))
+# ---------------------------------------------------
+# Sidebar – Official Data Sources (Short References)
+# ---------------------------------------------------
 
+st.sidebar.markdown("---")
+st.sidebar.title("Official Data Sources")
+
+st.sidebar.markdown("""
+**CSO – Central Statistics Office**  
+- Agricultural Price Indices  
+- Agri-Environmental Indicators  
+- Farm Structure & Income Data  
+""")
+
+st.sidebar.markdown("""
+**DAFM – Dept. of Agriculture, Food & the Marine**  
+- CAP Strategic Plan 2023–2027  
+- Eco-Schemes & LPIS Datasets  
+""")
+
+st.sidebar.markdown("""
+**Copernicus / ESA**  
+- Sentinel-1/2/3/5P Imagery  
+- NDVI, Soil Moisture, CH₄, NO₂  
+""")
+
+st.sidebar.markdown("""
+**Eurostat – European Commission**  
+- Economic Accounts for Agriculture  
+- GHG Emissions by Sector 
+""")
+
+
+st.sidebar.markdown("""
+**EEA – European Environment Agency**  
+- CORINE Land Cover / CLMS  
+- E-PRTR Emission Register  
+""")
+
+st.sidebar.markdown("""
+**Climate & Meteorological Data**  
+- Met Éireann AgMet Stations  
+- NOAA VIIRS, ERA5 Reanalysis  
+""")
+
+st.sidebar.markdown("""
+**EU Regulatory Frameworks**  
+- EU AI Act (2024/1689)  
+- EU Data Act (2023/2854)  
+- GDPR, Data Gov. Act, Cybersecurity Act  
+""")
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Data harmonised to county and NUTS3 levels (2016–2024).")
