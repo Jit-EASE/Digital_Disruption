@@ -917,10 +917,8 @@ st.sidebar.markdown("""
 
 st.sidebar.markdown("""
 **EU Regulatory Frameworks**  
-- EU AI Act (2024/1689)  
-- EU Data Act (2023/2854)  
-- GDPR, Data Gov. Act, Cybersecurity Act  
+- EU AI Act, EU Data Act, GDPR, Data Gov. Act, Cybersecurity Act  
 """)
 
-st.sidebar.markdown("---")
-st.sidebar.caption("Data harmonised to county and NUTS3 levels (2016–2024).")
+#st.sidebar.markdown("---")
+#st.sidebar.caption("Data harmonised to county and NUTS3 levels (2016–2024).")
