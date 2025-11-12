@@ -926,8 +926,8 @@ st.sidebar.markdown("""
 # ---------------------------------------------------
 # Sidebar – Econometric & AI Models Used
 # ---------------------------------------------------
-
-st.sidebar.markdown("###Econometric Models Used")
+st.sidebar.markdown("---")
+st.sidebar.title("Econometric Models")
 
 st.sidebar.markdown("""
 **OLS (Ordinary Least Squares)**  """)
