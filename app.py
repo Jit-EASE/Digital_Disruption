@@ -922,3 +922,66 @@ st.sidebar.markdown("""
 
 #st.sidebar.markdown("---")
 #st.sidebar.caption("Data harmonised to county and NUTS3 levels (2016–2024).")
+
+# ---------------------------------------------------
+# Sidebar – Econometric & AI Models Used
+# ---------------------------------------------------
+
+st.sidebar.markdown("###Econometric Models Used")
+
+st.sidebar.markdown("""
+**OLS (Ordinary Least Squares)**  """)
+#- Baseline model for price, emission & adoption regressions  
+#- Diagnostic: heteroskedasticity & multicollinearity tests
+#""")
+
+st.sidebar.markdown("""
+**Fixed / Random Effects (Panel Models)**  """)
+#- County & NUTS3-level panel estimation (2016–2024)  
+#- Controls for unobserved heterogeneity across regions
+#""")
+
+st.sidebar.markdown("""
+**Difference-in-Differences (DiD)**  """)
+#- Evaluates causal impact of CAP & eco-scheme interventions  
+#- Compares treated vs. non-treated farm cohorts
+#""")
+
+st.sidebar.markdown("""
+**VECM / ECM (Error-Correction Models)**  """)
+#- Short- and long-run dynamics between GHG, CAP spend & output  
+#- Captures equilibrium adjustment speeds
+#""")
+
+st.sidebar.markdown("""
+**System-GMM (Dynamic Panel)**  """)
+#- Addresses endogeneity & serial correlation  
+#- Used for productivity, digital adoption & emissions links
+#""")
+
+st.sidebar.markdown("""
+**Monte-Carlo & Markov Simulation**  """)
+#- Stochastic policy stress-testing under uncertainty  
+#- Transition probabilities for digital adoption pathways
+#""")
+
+#st.sidebar.markdown("""
+#**Reinforcement Learning (RL Teacher)**  
+#- Agentic simulation of policy actions & sustainability rewards  
+#- Self-learning optimisation loop integrated into dashboard
+#""")
+
+#st.sidebar.markdown("""
+#**Decision Tree Classifier**  
+#- Explainable surrogate for RL policy outcomes  
+#- Generates human-readable policy rules (Sustainable / Balanced / Unsustainable)
+#""")
+
+#st.sidebar.markdown("""
+#**GPT-4o-mini NLP Advisor (RAG/KE)**  
+#- Natural-language reasoning & policy explanation engine  
+#- Grounded in EU AI Act, Data Act & governance frameworks
+#""")
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Integrated econometric, simulation & AI layers ensure explainability, compliance and self-governing intelligence.")
