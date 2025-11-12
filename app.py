@@ -319,7 +319,7 @@ policy_context = build_policy_context(selected_keys)
 # ---------------------------------------------------
 
 
-st.title("Agri-Policy-Intelligence: A Self-Learning, Reasoning & Governing Digital Twin for Ireland’s Agri-Food Sector")
+st.title("Agri-Policy Intelligence: A Self-Learning, Reasoning & Governing Digital Twin for Ireland’s Agri-Food Sector")
 
 st.markdown(
     """
